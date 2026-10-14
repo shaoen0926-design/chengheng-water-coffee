@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+verification/
+test-results/
+.env
+.env.*
+*.log
