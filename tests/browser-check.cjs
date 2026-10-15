@@ -114,6 +114,7 @@ const path = require('node:path');
     await settings();
     await page.locator('#import-file').setInputFiles(backupFile(fixture));
     await click('#confirm-restore');
+    fixture.version = 2; // Old-format backups migrate without changing their recorded amounts.
     assert.equal(await text('badge-count'), '4 / 4');
     assert.match(await text('streak-message'), /連續 3 天/);
     await settings();
